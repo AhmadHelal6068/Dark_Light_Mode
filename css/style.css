@@ -1,0 +1,272 @@
+:root{
+    --min-colorLight: crimson;
+    --min-colorDark: #15181f;
+}
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body{
+    font-family: monospace;
+    background-color: #eee;
+}
+
+
+/* ------------------------------------- Dark Theme */
+.dark-theme{
+    background-color: #15181f;
+}
+section{
+    background-color: #eee;
+}
+.dark-theme section{
+    background-color: #15181f;
+}
+.container{
+    max-width: 1200px;
+    margin: 0px auto;
+    width: 90%;
+    position: relative;
+    text-align: center;
+    padding: 50px 0;
+    overflow-x: hidden;
+}
+.container .heading{
+    height: 150px;
+}
+#toggle{
+    -webkit-appearance: none;
+    appearance: none;
+    height: 40px;
+    width: 75px;
+    background-color: #15181f;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.dark-theme #toggle{
+    background-color: #fff;
+}
+#toggle::after{
+    content: "";
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    top: 5px;
+    left: 5px;
+    border-radius: 50%;
+}
+.dark-theme #toggle::after{
+    background-color: transparent;
+    box-shadow: 10px 10px #15181f;
+    top: -4px;
+    left: 30px;
+}
+
+
+
+
+/* ------------------------------- Color Switcher */
+.dark-theme .color-switcher{
+    background-color: #111;
+}
+.color-switcher{
+    position: absolute;
+    top: 50px;
+    right: -200px;
+    width: 200px;
+    padding: 10px;
+    background-color: #fff;
+    z-index: 1000;
+    transition: all 0.4s ease-in-out;
+}
+.color-switcher.active{
+    right: 0;
+}
+.color-switcher h3{
+    color: var(--min-colorLight);
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.dark-theme .color-switcher .switcher-btn{
+    background-color: #111;
+}
+.color-switcher .switcher-btn{
+    position: absolute;
+    top: 0;
+    left: -54px;
+    color: var(--min-colorLight);
+    background-color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 25px;
+}
+.color-switcher .switcher-btn i{
+    animation: rotate 2s linear infinite;
+}
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.color-switcher .theme-buttons-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.color-switcher .theme-buttons-container .theme-buttons{
+    display: block;
+    height: 27px;
+    width: 27px;
+    border-radius: 5px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* -------------------------------- Start Title */
+.dark-theme .container .title{
+    background-color: #111;
+}
+.container .title{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    left: 0px;
+    top: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.dark-theme .container .title img{
+    border-color: var(--min-colorDark);
+}
+.container .title img{
+    width: 60px;
+    height: 60px;
+    border: 2px solid var(--min-colorLight);
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.container .title div{
+    text-align: center;
+}
+.dark-theme .container .title div span{
+    color: #eee;
+}
+.container .title div span{
+    font-size: 16px;
+    padding-bottom: 10px;
+    color: #444;
+}
+.dark-theme .container .title div h4{
+    color: #fff;
+}
+.container .title div h4{
+    font-size: 20px;
+    color: #333;
+}
+
+
+
+
+/* -------------------------------------- Start Box Or Heading Style */
+.container .heading h1{
+    color: #333;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 6px;
+}
+.dark-theme .container .heading h1{
+    color: #fff;
+}
+.container .box{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    text-align: center;
+}
+.dark-theme .container .box .text{
+    background-color: #111;
+}
+.container .box .text{
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+}
+.container .box .text img{
+    width: 100%;
+    height: 200px;
+}
+.dark-theme .container .box .text h2{
+    color: #fff;
+}
+.container .box .text h2{
+    padding: 10px 0 15px;
+    color: #333;
+    font-weight: bold;
+}
+.dark-theme .container .box .text p{
+    color: #eee;
+}
+.container .box .text p{
+    color: #777;
+    padding-bottom: 20px;
+}
+.container .box .text .btn{
+    display: flex;
+    justify-content: space-around;
+}
+.dark-theme .container .box .text .btn a{
+    background-color: var(--min-colorDark);
+}
+.container .box .text .btn a{
+    padding: 8px 26px;
+    color: #fff;
+    background-color: var(--min-colorLight);
+    transition: all 0.4s ease-in-out;
+}
+.container .box .text .btn a:hover{
+    opacity: 0.8;
+}
+
+
+
+
+@media (max-width:991px) {
+    .container .title{
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 250px;
+    }
+    .container .heading {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width:590px) {
+    .container .heading h1{
+        font-size: 30px;
+    }
+}
